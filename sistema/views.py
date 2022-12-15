@@ -8,3 +8,9 @@ class NoticiaListview(ListView):
 
 def noticias(request):
     return render(request,'noticias.html')
+
+def registro(request):
+    return render(request,'registrarse.html')
+
+def ingresar(request):
+    return render(request,'ingresar.html')
