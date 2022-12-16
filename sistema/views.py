@@ -16,4 +16,4 @@ def ingresar(request):
     return render(request,'ingresar.html')
 
 def index(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
