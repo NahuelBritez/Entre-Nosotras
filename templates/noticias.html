@@ -50,10 +50,10 @@
         <div class="container">
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+            <a class="navbar-brand logo-text page-scroll" href="inicio">Entre Nosotras</a> 
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="inicio"><img src="{%  static 'assets/images/logo.svg' %}" alt="alternative"></a> 
+            {% comment %} <a class="navbar-brand logo-image" href="inicio"><img src="{%  static 'assets/images/logo.jpg' %}" alt="alternative"></a>  {% endcomment %}
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,20 +71,17 @@
                         <a class="nav-link page-scroll" href="#features">NOSOTRAS</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">EQUIPO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="noticias">CURSOS</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="noticias">NOTICIAS</a>
                     </li>
-
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">EQUIPO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="http://127.0.0.1:8000/noticia"><span class="item-text">CURSOS</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="ingresar">INGRESAR</a>
+                    <a class="btn-outline-sm" href="ingresar">ACCEDER</a>
                 </span>
             </div>
         </div> <!-- end of container -->

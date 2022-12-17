@@ -24,6 +24,7 @@
 
     <!-- Styles -->
     <link href= "{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/estilosagregados.css'%}" rel="stylesheet">
     <link href= "{% static 'assets/css/bootstrap.css'%}" rel="stylesheet">
     <link href="{% static 'assets/css/fontawesome-all.css'%}"s rel="stylesheet">
     <link href="{% static 'assets/css/swiper.css'%}" rel="stylesheet">
@@ -51,10 +52,10 @@
         <div class="container">
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+            <a class="navbar-brand logo-text page-scroll" href="inicio">Entre Nosotras</a> 
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="inicio"><img src="{%  static 'assets/images/logo.svg' %}" alt="alternative"></a> 
+            {% comment %} <a class="navbar-brand logo-image" href="inicio"><img src="{%  static 'assets/images/logo.jpg' %}" alt="alternative"></a>  {% endcomment %}
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,26 +73,22 @@
                         <a class="nav-link page-scroll" href="#features">NOSOTRAS</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">EQUIPO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="noticias">CURSOS</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="noticias">NOTICIAS</a>
                     </li>
-
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">EQUIPO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="http://127.0.0.1:8000/noticia"><span class="item-text">CURSOS</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="ingresar">INGRESAR</a>
+                    <a class="btn-outline-sm" href="ingresar">ACCEDER</a>
                 </span>
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
 
     <!-- Header -->
     <header id="header" class="header">
@@ -100,15 +97,15 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
-                            <h1>aca anduve yo 2</h1>
-                            <p class="p-large">Use Tivo to automate your marketing actions in order to reach a much larger audience</p>
-                            <a class="btn-solid-lg page-scroll" href="sign-up.html">SIGN UP</a>
+                            <h1>Entre Nosotras, mujeres ayudando a mujeres.</h1>
+                            <p class="p-large">¡Ingresa en nuestro blog y enterate de las noticias y eventos mas recientes!</p>
+                            <a class="btn-solid-lg page-scroll" href="noticias">¡Ingresa aca!</a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
                         <div class="image-container">
                             <div class="img-wrapper">
-                                <img class="img-fluid" src="{%  static 'assets/images/header-software-app.png' %}" alt="alternative">
+                                <img class="img-fluid" src="{%  static 'assets/images/equipo.jpg' %}" alt="Foto grupal del equipo">
                             </div> <!-- end of img-wrapper -->
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
@@ -119,59 +116,35 @@
     <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#5f4def;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg>
     <!-- end of header -->
 
-    <!-- Description -->
-    <div class="cards-1">
+    <!-- Details -->
+    <div id="details" class="basic-1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="above-heading">DESCRIPTION</div>
-                    <h2 class="h2-heading">Marketing Automation Will Bring More Qualified Leads</h2>
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>Sobre Nosotras</h2>
+                        <p>
+                            Nuestra Fundación surge en el año 2016 con el objetivo de ayudar a las mujeres, primero acudiendo en auxilio
+                            de los problemas más acuciantes de quienes padecían violencia de género.
+                            Pero también fuimos ampliando nuestro accionar en otros ámbitos. Porque toda experiencia traumática no pasa sin dejar sus
+                            heridas.
+                            Y el contexto familiar y social tampoco queda indemne a los sucesos.
+                            Hicimos muchos eventos con la mira siempre puesta en:
+
+                            El empoderamiento de la mujer que en definitiva le de un equilibrio en todos los órdenes de su vida.
+                            Y asu vez la Mujer replique en su vida cotidiana con otras mujeres el poder y el equilibrio.
+                        </p>
+                    </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="{%  static 'assets/images/description-1.png' %}" alt="alternative">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Lists Builder</h4>
-                            <p>It's very easy to start creating email lists for your marketing actions. Just create your Tivo account</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="{%  static 'assets/images/description-2.png' %}" alt="alternative">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Campaign Tracker</h4>
-                            <p>Campaigns is a feature we've developed since the beginning because it's at the core of Tivo's functionalities</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="{%  static 'assets/images/description-3.png' %}" alt="alternative">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Analytics Tool</h4>
-                            <p>Tivo collects customer data in order to help you analyse different situations and take required action</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{%  static 'assets/images/nosotras.png' %}" alt="alternative">
+                    </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
-    <!-- end of description -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
 
 
     <!-- Features -->
@@ -179,9 +152,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">FEATURES</div>
-                    <h2 class="h2-heading">Marketing Automation</h2>
-                    <p class="p-heading">Take your business strategy to the next level and automatize your marketing tasks to save time for product development. Tivo can provide results in less than 2 weeks</p>
+                    <h2 class="h2-heading">Conocé nuestros cursos</h2>
+                    <p class="p-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi ex, varius sit amet lectus nec, aliquet efficitur velit. Vestibulum id ultrices massa. Ut vitae massa varius, pellentesque turpis in, sagittis urna.</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -190,13 +162,13 @@
                     <!-- Tabs Links -->
                     <ul class="nav nav-tabs" id="argoTabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-list"></i>List Builder</a>
+                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Curso 1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-envelope-open-text"></i>Campaigns</a>
+                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Curso 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-chart-bar"></i>Analytics</a>
+                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Curso 3</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -215,7 +187,7 @@
                                 <div class="col-lg-6">
                                     <div class="text-container">
                                         <h3>List Building Is Easier Than Ever</h3>
-                                        <p>It's very easy to start using Tivo. You just need to fill out and submit the <a class="blue page-scroll" href="sign-up.html">Sign Up Form</a> and you will receive access to the app and all of its features in no more than 24h.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi ex, varius sit amet lectus nec, aliquet efficitur velit. Vestibulum id ultrices massa.</p>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
@@ -230,7 +202,6 @@
                                                 <div class="media-body">Add and remove subscribers using the control panel</div>
                                             </li>
                                         </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
                                     </div> <!-- end of text-container -->
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
@@ -442,38 +413,6 @@
     <!-- end of details lightboxes -->
 
 
-    <!-- Details -->
-    <div id="details" class="basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h2>Now Is The Time To Upgrade Your Marketing Solution</h2>
-                        <p>Target the right customers for your business with the help of Tivo's patented segmentation technology and deploy efficient marketing campaigns. Keep your customers happy and loyal.</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Understand customers and meet their requirements</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
-                            </li>
-                        </ul>
-                        <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="{%  static 'assets/images/details.png' %}" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of details -->
-
-
     <!-- Video -->
     <div id="video" class="basic-2">
         <div class="container">
@@ -483,7 +422,7 @@
                     <!-- Video Preview -->
                     <div class="image-container">
                         <div class="video-wrapper">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
+                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=SivJ1uCE2w4" data-effect="fadeIn">
                                 <img class="img-fluid" src="{%  static 'assets/images/details.png' %}" alt="alternative">
                                 <span class="video-play-button">
                                     <span></span>
@@ -501,119 +440,7 @@
     <!-- end of video -->
 
 
-    <!-- Pricing -->
-    <div id="pricing" class="cards-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="above-heading">PRICING</div>
-                    <h2 class="h2-heading">Pricing Options Table</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
 
-                    <!-- Card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">BASICO</div>
-                            <div class="price"><span class="currency">$</span><span class="value">Free</span></div>
-                            <div class="frequency">14 days trial</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
-
-                    <!-- Card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">ADVANCED</div>
-                            <div class="price"><span class="currency">$</span><span class="value">29.99</span></div>
-                            <div class="frequency">monthly</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
-
-                    <!-- Card-->
-                    <div class="card">
-                        <!--<div class="label">
-                            <p class="best-value">Best Value</p>
-                        </div> -->
-                        <div class="card-body">
-                            <div class="card-title">COMPLETE</div>
-                            <div class="price"><span class="currency">$</span><span class="value">39.99</span></div>
-                            <div class="frequency">monthly</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
-    <!-- end of pricing -->
 
 
     <!-- Testimonials -->
@@ -693,77 +520,6 @@
     <!-- end of testimonials -->
 
 
-    <!-- Newsletter -->
-    <div class="form">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <div class="above-heading">NEWSLETTER</div>
-                        <h2>Stay Updated With The Latest News To Get More Qualified Leads</h2>
-
-                        <!-- Newsletter Form -->
-                        <form id="newsletterForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="nemail" required>
-                                <label class="label-control" for="nemail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="nterms" value="Agreed-to-Terms" required>I've read and agree to Tivo's written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">SUBSCRIBE</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="nmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                        <!-- end of newsletter form -->
-
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="icon-container">
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    </div> <!-- end of col -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of form -->
-    <!-- end of newsletter -->
 
 
     <!-- Footer -->
