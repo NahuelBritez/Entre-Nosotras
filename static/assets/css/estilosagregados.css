@@ -1,0 +1,16 @@
+/* ESTILOS DEL HEADER */
+
+.header img{
+    border-radius: 10px;
+
+}
+
+/* ESTILOS SECCION NOSOTRAS */
+
+#details{
+    text-align: center;
+}
+
+#details img{
+    height: 400px;
+}
