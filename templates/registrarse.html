@@ -22,13 +22,14 @@
     <!-- Website Title -->
     <title>Sign Up - Tivo - SaaS App HTML Landing Page Template</title>
     
-    <!-- Styles -->
-    <link href= "{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext' %}" rel="stylesheet">
-    <link href= "{% static 'assets/css/bootstrap.css'%}" rel="stylesheet">
-    <link href="{% static 'assets/css/fontawesome-all.css'%}"s rel="stylesheet">
-    <link href="{% static 'assets/css/swiper.css'%}" rel="stylesheet">
-	<link href="{% static 'assets/css/magnific-popup.css'%}" rel="stylesheet">
-	<link href="{% static 'assets/css/styles.css'%}" rel="stylesheet">
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+        <link href="{% static 'assets/css/bootstrap.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/css/fontawesome-all.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/css/swiper.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/css/magnific-popup.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/css/styles.css'%}" rel="stylesheet">
+
 	
 	<!-- Favicon  -->
     <link rel="icon" href="{% static 'assets/images/favicon.png' %}">
@@ -96,38 +97,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Sign Up</h1>
+                    <h1>Registrarse</h1>
                    <p>¿Ya tenes una cuenta? Entonces ingresa en el siguiente link: <a class="white" href="ingresar">Ingresar</a></p> 
                     <!-- Sign Up Form -->
-                    <div class="form-container">
-                        <form id="signUpForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="semail" required>
-                                <label class="label-control" for="semail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="sname" required>
-                                <label class="label-control" for="sname">Name</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="spassword" required>
-                                <label class="label-control" for="spassword">Password</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="sterms" value="Agreed-to-Terms" required>I agree with Tivo's <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">SIGN UP</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="smsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                    </div> <!-- end of form container -->
+
+                        <div class="form-container">
+                            <form action="" method="post" class="formulario">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <button type="submit" id="submit">Registrarse</button>
+                            </form>
+                        </div>
                     <!-- end of sign up form -->
 
                 </div> <!-- end of col -->
@@ -138,6 +118,7 @@
 
 
     <!-- Scripts -->
+    <!-- Scripts -->
     <script src="{%  static 'assets/js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="{%  static 'assets/js/popper.min.js' %}"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="{%  static 'assets/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
@@ -145,6 +126,6 @@
     <script src="{%  static 'assets/js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
     <script src="{%  static 'assets/js/jquery.magnific-popup.js' %}"></script> <!-- Magnific Popup for lightboxes -->
     <script src="{%  static 'assets/js/validator.min.js' %}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{%  static 'assets/js/scripts.js' %}"></script> <!-- Custom scripts -->
+    <script src="{%  static 'assets/js/scripts.js' %}"></script> 
 </body>
 </html>

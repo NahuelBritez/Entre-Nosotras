@@ -19,14 +19,16 @@ from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', NoticiaListview.as_view()),
     path('', include('apps.noticia.urls')),
-    path('registrarse',registro),
-    path('ingresar',ingresar),
-    path('inicio', index)
+    path('registrarse',registrarse),
+    path('inicio', index),
+    path('ingresar',LoginView.as_view(template_name='ingresar.html'),name='ingresar'),
+
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

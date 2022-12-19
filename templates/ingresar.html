@@ -106,24 +106,14 @@
                    <p>¿Todavia no tenes una cuenta? Entra aca y registrate.<a class="white" href="registrarse">Registrarme.</a></p> 
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                        <form id="logInForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="lemail" required>
-                                <label class="label-control" for="lemail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="lpassword" required>
-                                <label class="label-control" for="lpassword">Password</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">LOG IN</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
+                        <div class="form-container">
+                            <div class="form-container">
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                                    {{form}}
+                                    <button type="submit" id="submit">Ingresar</button>
+                                </form>
+                            </form>
                     </div> <!-- end of form container -->
                     <!-- end of sign up form -->
 
