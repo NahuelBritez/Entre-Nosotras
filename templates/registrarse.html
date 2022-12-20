@@ -84,13 +84,18 @@
                         <a class="nav-link page-scroll" href="noticias">NOTICIAS</a>
                     </li>
                 </ul>
+                {% if request.user.is_authenticated%}
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="salir">CERRAR SESION</a>
+                </span>
+                {% else %}
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="ingresar">ACCEDER</a>
                 </span>
+                {% endif %}
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
 
     <!-- Header -->
     <header id="header" class="ex-2-header">
@@ -101,7 +106,7 @@
                    <p>¿Ya tenes una cuenta? Entonces ingresa en el siguiente link: <a class="white" href="ingresar">Ingresar</a></p> 
                     <!-- Sign Up Form -->
 
-                        <div class="form-container">
+                        <div class="container d-flex justify-content-center bg-secondary">
                             <form action="" method="post" class="formulario">
                                 {% csrf_token %}
                                 {{form.as_p}}

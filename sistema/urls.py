@@ -28,6 +28,7 @@ urlpatterns = [
     path('registrarse',registrarse),
     path('inicio', index),
     path('ingresar',LoginView.as_view(template_name='ingresar.html'),name='ingresar'),
+    path('salir',LogoutView.as_view(template_name='salir.html'),name='salir'),
 
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
