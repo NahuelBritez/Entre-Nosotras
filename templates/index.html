@@ -82,9 +82,15 @@
                         <a class="nav-link page-scroll" href="noticias">NOTICIAS</a>
                     </li>
                 </ul>
+                {% if request.user.is_authenticated%}
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="salir">CERRAR SESION</a>
+                </span>
+                {% else %}
                 <span class="nav-item">
 
                 </span>
+                {% endif %}
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
