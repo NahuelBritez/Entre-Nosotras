@@ -23,7 +23,11 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', NoticiaListview.as_view()),
+    path('noticias', noticias),
+    path('cursos', cursos),
+    path('eventos', eventos),
+    path('motivacionales', motivacionales),
+    path('galeria', galeria),
     path('', include('apps.noticia.urls')),
     path('registrarse',registrarse),
     path('inicio', index),

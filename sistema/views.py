@@ -1,16 +1,34 @@
 from django.shortcuts import render,redirect
-from apps.noticia.models import Noticia
+from apps.noticia.models import Noticia, Categoria
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import userRegisterForm
 
-class NoticiaListview(ListView):
-    model = Noticia
-    template_name = 'index.html'
-
 def noticias(request):
-    return render(request,'noticias.html')
+    nombreCategoria = 'Noticias'
+    posts = Noticia.objects.filter(activo=True)
+    return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
+
+def cursos(request):
+    nombreCategoria = 'Cursos'
+    posts = Noticia.objects.filter(activo=True, categoria = Categoria.objects.get(nombre = 'Cursos'))
+    return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
+
+def eventos(request):
+    nombreCategoria = 'Eventos'
+    posts = Noticia.objects.filter(activo=True, categoria = Categoria.objects.get(nombre = 'Eventos'))
+    return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
+
+def motivacionales(request):
+    nombreCategoria = 'Motivacionales'
+    posts = Noticia.objects.filter(activo=True, categoria = Categoria.objects.get(nombre = 'Motivacionales'))
+    return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
+
+def galeria(request):
+    nombreCategoria = 'Galería'
+    posts = Noticia.objects.filter(activo=True, categoria = Categoria.objects.get(nombre = 'Galería'))
+    return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
 
 def registrarse(request):
     if request.method == 'POST':
