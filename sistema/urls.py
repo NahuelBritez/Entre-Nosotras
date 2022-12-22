@@ -23,17 +23,17 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('',index),
     path('noticias', noticias),
     path('cursos', cursos),
     path('eventos', eventos),
     path('motivacionales', motivacionales),
     path('galeria', galeria),
+    path('post/<int:pk>/', post_detail, name='post_detail'),
     path('', include('apps.noticia.urls')),
-    path('registrarse',registrarse),
     path('inicio', index),
-    path('ingresar',LoginView.as_view(template_name='ingresar.html'),name='ingresar'),
-    path('salir',LogoutView.as_view(template_name='salir.html'),name='salir'),
-
+    path('users/', include('django.contrib.auth.urls')),
+    path('users/', include('apps.users.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

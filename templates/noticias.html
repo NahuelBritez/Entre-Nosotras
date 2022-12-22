@@ -158,17 +158,19 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             
-                            <h2><a href="">{{n.titulo}}</a></h2>
-                            <h5><a href="">{{n.subtitulo}}</a></h5>
-                            <p>{{n.texto}}</p>
-                            <h6><a href="">{{n.publicado}}</a></h6>
+                            <h2><a href="{% url 'post_detail' pk=n.pk %}">{{ n.titulo }}</a></h2>
+                            {% if n.subtitulo %}
+                                <h5>{{n.subtitulo}}</h5>
+                            {% endif %}
+                            <p>{{n.texto | truncatechars:'300'}}</p>
+                            <h6>{{n.publicado}}</h6>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
                                     <div class="media-body">{{n.categoria}}</div>
                                 </li>                       
                             </ul>
-                            <a class="btn-solid-reg page-scroll" href="sign-up.html">Comentarios</a>
+                            <a class="btn-solid-reg page-scroll" href="{% url 'post_detail' pk=n.pk %}">Ver mas...</a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">

@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from apps.noticia.models import Noticia, Categoria
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
@@ -30,21 +30,10 @@ def galeria(request):
     posts = Noticia.objects.filter(activo=True, categoria = Categoria.objects.get(nombre = 'Galería'))
     return render(request,'noticias.html', {'posts':posts, 'nombreCategoria':nombreCategoria})
 
-def registrarse(request):
-    if request.method == 'POST':
-        form = userRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data["username"]
-            messages.success(request,f'Usuario {username} creado exitosamente.')
-            return redirect(index)
-    else:
-        form = userRegisterForm()
-    context = {'form' : form}
-    return render(request,'registrarse.html',context)
-
-def ingresar(request):
-    return render(request,'ingresar.html')
+def post_detail(request, pk):
+    post = get_object_or_404(Noticia, pk=pk)
+    return render(request, 'post_detail.html', {'post': post})
 
 def index(request):
     return render(request, 'index.html')
+
