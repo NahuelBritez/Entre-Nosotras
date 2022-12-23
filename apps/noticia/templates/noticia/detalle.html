@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<header id="header" class="header" style="background-color: #5f4dee; padding:100px; text-align: center;">
+<header id="header" class="header" style="background-color: #5f4dee; padding:100px; text-align:justify;">
 	<h1 class="card-title">{{noticia.titulo}}</h1>
 	<h4 class="card-title text-white">{{noticia.subtitulo}}</h4>
 	<p class="card-text text-white d-flex flex-start"><small>{{noticia.fecha}}</small></p>
@@ -12,35 +12,39 @@
 {% comment "" %}Seccion noticias{% endcomment %}
 <div class="card">
 	<div class="card-body">
-		<center>
-
-			<h4 class="card-text" >{{noticia.cuerpo}}</h4>
-		</center>
-		<p class="card-text"><small class="text-muted">Categoria: {{noticia.categoria_noticia}}</small></p>
-		<p class="card-text"><small class="text-muted">{{noticia.fecha}}</small></p>
+			<p class="card-text" style="max-width:1000px;margin-left:300;">{{noticia.cuerpo}}</p>
 	</div>
-	<div styles="display:flex; align-items:center;">
-	<img src="{{noticia.imagen.url}}" class="card-img-bottom" style="max-width: 300px;">
-	<div>
+	<img src="{{noticia.imagen.url}}" class="card-img-bottom" style="max-width: 500px;max-height:300px;margin:auto;margin-top:20px;margin-bottom:20px;">
+	<p class="card-text">Categoria: {{noticia.categoria_noticia}}</p>
 </div>
 
-			<form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
-			
-			{% comment %} <textarea name="comentario" maxlength="1500"> </textarea> {% endcomment %}
-
-
-			<div class="form-floating">
-				<textarea class="form-control" name="comentario" maxlength="1500" width='50px'></textarea>
-				
-			  </div>
-
-
-			<input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""> 
-			{% comment %} <input type="submit" value="Comentar"> {% endcomment %}
-			<button type="submit"  value="Comentar" class="btn btn-outline-primary">Comentar</button>
-		    </form>
+{% if request.user.is_authenticated%}
+						 <div style="
+						 max-width:600px; margin-left:30px; 
+						 border:solid 2px;
+						 margin:auto;
+						 margin-top:20px;
+						 margin-bottom:20px;
+						 display:flex; 
+						 alig-items:center;
+						 flex-direction: column;">
+							 <div class="form-floating">
+								 <form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
+									  <textarea class="form-control" name="comentario" maxlength="1500" style="margin:auto;margin-top:20px;margin-bottom:20px;min-width:550px;max-width:300px;min-height:150px;max-height:100px;"></textarea>
+									  <input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""> 
+				         <button type="submit"  value="Comentar" class="btn btn-solid-reg" style="margin:auto;
+						 margin-top:20px;margin-bottom:20px;display:flex; alig-items:center;">Comentar</button>
+						 {% else %}
+						 <span class="nav-item">
+							 <a class="btn-outline-sm" style="margin:auto;
+							 margin-top:20px;margin-bottom:20px;display:flex; alig-items:center;max-width:300px; text-align: center;" href="{% url 'login' %}">Inicie sesion para comentar</a>
+						 </span>
+{% endif %}
+		             </form>
+		        </div>
+			</div>
 {% comment "" %}Seccion comentarios{% endcomment %}
-		<h3 style="background-color: #5f4dee;padding:40px;">COMENTARIOS</h3>
+		<h3 style="background-color: #5f4dee;padding:40px;" class="text-white">COMENTARIOS</h3>
 		{% for com in comentarios %} 
 		<strong>FECHA: {{com.fecha}} - </strong>
 		<strong>USUARIO: {{com.usuario}} </strong>

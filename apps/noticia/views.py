@@ -24,7 +24,7 @@ def Listar_Noticias(request):
 
 	return render(request, 'noticia/listar.html', contexto)
 
-# @login_required
+
 def Detalle_Noticias(request, pk):
 	contexto = {}
 
@@ -37,14 +37,14 @@ def Detalle_Noticias(request, pk):
 	return render(request, 'noticia/detalle.html',contexto)
 
 
-@login_required
+
 
 def Comentar_Noticia(request):
 
 	com = request.POST.get('comentario',None)
 	usu = request.user
-	noti = request.POST.get('id_noticia', None)# OBTENGO LA PK
-	noticia = Noticia.objects.get(pk = noti) #BUSCO LA NOTICIA CON ESA PK
+	noti = request.POST.get('id_noticia', None)
+	noticia = Noticia.objects.get(pk = noti) 
 	coment = Comentario.objects.create(usuario = usu, noticia = noticia, texto = com)
 
 	return redirect(reverse_lazy('noticias:detalle', kwargs={'pk': noti}))

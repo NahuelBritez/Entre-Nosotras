@@ -18,37 +18,37 @@
 
 {% comment %} =========================================ACA VAN LAS NOTICIAS====================================================== {% endcomment %}
 
-<div class="submenu">
-
-    <a href="{% url 'noticias:listar' %}">TODAS</a>
+<div class="submenu" style="padding: 20px;display: flex; gap: 6px;background-color: white;margin-bottom:20px;">
+    <a href="{% url 'noticias:listar' %}" style="text-decoration:none;a:hover:text-decoration:underline;" class="btn-solid-reg">Todas</a>
     {% for cat in categorias %}
-        <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
+        <a href="?id={{cat.pk}}" style="text-decoration:none;" class="btn-solid-reg">{{cat.nombre}}</a>
     {% endfor %}
 </div>
-
+{% if noticias %}
 {% for noti in noticias %}
-
 <center>
- 
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{noti.imagen.url}}" class="img-fluid rounded-start" alt="imagen-noticia">
       </div>
       <div class="col-md-8">
-        <div class="card-body">
+        <div class="card-body" style="display:flex;align-items:justify;flex-direction: column;">
           <h5 class="card-title"><a href="{% url 'noticias:detalle' noti.pk %}">{{noti.titulo}}</a></h5>
-          <p class="card-text"> {{noti.cuerpo}}</p>
+          <p class="card-text"> {{noti.cuerpo | truncatechars:'190'}}</p>
           <p>Categoria: {{noti.categoria_noticia}}</p>
           <p class="card-text"><small class="text-muted">{{noti.fecha}}</small></p>
+          <a href="{% url 'noticias:detalle' noti.pk %}" class="btn-solid-reg">Ver mas...</a>
           <br><br>
         </div>
       </div>
     </div>
   </div>
- 
 </center>
 {% endfor %}
+{% else %}
+<h1> No existen posts en esta categoria. </h1>
+{% endif %}
 
 {% comment %} =========================================ACA VAN LAS NOTICIAS====================================================== {% endcomment %}
     

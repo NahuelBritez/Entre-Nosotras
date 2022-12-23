@@ -21,14 +21,14 @@ class Noticia(models.Model):
 
 class Comentario(models.Model):
 	usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
-	texto = models.TextField(max_length = 1500)
+	texto = models.TextField(max_length = 1500,blank=False,null=False)
 	noticia = models.ForeignKey(Noticia, on_delete = models.CASCADE)
 	fecha = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
-		ordering = ['-fecha']
+		ordering = ['-fecha'] 
 
 	def __str__(self):
 		return '%s - %s' % (self.noticia.titulo, self.nombre)
-		# return f"Usuario: {self.usuario}  //  Comentario: {self.texto}"
+		
 
