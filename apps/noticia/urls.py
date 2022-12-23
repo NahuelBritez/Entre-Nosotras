@@ -1,6 +1,14 @@
 from django.urls import path
-from .views import NoticiaListview
+from . import views
+
+app_name = 'noticias'
 
 urlpatterns = [
-    path('noticias', NoticiaListview.as_view())
+	
+	path('', views.Listar_Noticias, name = 'listar'),
+
+	path('Detalle/<int:pk>', views.Detalle_Noticias, name = 'detalle'),
+	
+	path('Comentario/', views.Comentar_Noticia, name = 'comentar'),
+	
 ]

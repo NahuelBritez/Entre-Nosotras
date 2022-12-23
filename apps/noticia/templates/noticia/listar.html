@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Blog</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+
+
+{% comment %} =========================================ACA VAN LAS NOTICIAS====================================================== {% endcomment %}
+
+<div class="submenu">
+
+    <a href="{% url 'noticias:listar' %}">TODAS</a>
+    {% for cat in categorias %}
+        <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
+    {% endfor %}
+</div>
+
+{% for noti in noticias %}
+
+<center>
+ 
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{noti.imagen.url}}" class="img-fluid rounded-start" alt="imagen-noticia">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{% url 'noticias:detalle' noti.pk %}">{{noti.titulo}}</a></h5>
+          <p class="card-text"> {{noti.cuerpo}}</p>
+          <p>Categoria: {{noti.categoria_noticia}}</p>
+          <p class="card-text"><small class="text-muted">{{noti.fecha}}</small></p>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</center>
+{% endfor %}
+
+{% comment %} =========================================ACA VAN LAS NOTICIAS====================================================== {% endcomment %}
+    
+{% endblock content %}

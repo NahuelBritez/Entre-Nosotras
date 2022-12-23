@@ -81,7 +81,7 @@
                         <a class="nav-link page-scroll" href="noticias">CURSOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/noticias">NOTICIAS</a>
+                        <a class="nav-link page-scroll" href="{% url 'noticias:listar' %}">NOTICIAS</a>
                     </li>
                 </ul>
                 {% if request.user.is_authenticated%}

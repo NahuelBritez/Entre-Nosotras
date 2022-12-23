@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Entre Nosotras | Mujeres ayudando a mujeres{% endblock title %}
+{% load static %}
+
+
+{% block content %}
+<header id="header" class="header" style="background-color: #5f4dee; padding:100px; text-align: center;">
+	<h1 class="card-title">{{noticia.titulo}}</h1>
+	<h4 class="card-title text-white">{{noticia.subtitulo}}</h4>
+	<p class="card-text text-white d-flex flex-start"><small>{{noticia.fecha}}</small></p>
+</header>
+{% comment "" %}Seccion noticias{% endcomment %}
+<div class="card">
+	<div class="card-body">
+		<center>
+
+			<h4 class="card-text" >{{noticia.cuerpo}}</h4>
+		</center>
+		<p class="card-text"><small class="text-muted">Categoria: {{noticia.categoria_noticia}}</small></p>
+		<p class="card-text"><small class="text-muted">{{noticia.fecha}}</small></p>
+	</div>
+	<div styles="display:flex; align-items:center;">
+	<img src="{{noticia.imagen.url}}" class="card-img-bottom" style="max-width: 300px;">
+	<div>
+</div>
+
+			<form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
+			
+			{% comment %} <textarea name="comentario" maxlength="1500"> </textarea> {% endcomment %}
+
+
+			<div class="form-floating">
+				<textarea class="form-control" name="comentario" maxlength="1500" width='50px'></textarea>
+				
+			  </div>
+
+
+			<input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""> 
+			{% comment %} <input type="submit" value="Comentar"> {% endcomment %}
+			<button type="submit"  value="Comentar" class="btn btn-outline-primary">Comentar</button>
+		    </form>
+{% comment "" %}Seccion comentarios{% endcomment %}
+		<h3 style="background-color: #5f4dee;padding:40px;">COMENTARIOS</h3>
+		{% for com in comentarios %} 
+		<strong>FECHA: {{com.fecha}} - </strong>
+		<strong>USUARIO: {{com.usuario}} </strong>
+		<p>{{com.texto}}</p>
+		<hr>
+		{% endfor %}
+		<a href="{% url 'noticias:listar' %}">VOLVER</a>
+{% comment %} =========================================ACA VAN LAS NOTICIAS====================================================== {% endcomment %}
+    
+{% endblock content %}

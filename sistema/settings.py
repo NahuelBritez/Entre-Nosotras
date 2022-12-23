@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MESSAGES_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+
 
 # Application definition
 
@@ -142,6 +145,7 @@ LOGIN_URL = reverse_lazy('apps.users.login')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL    ='users.Usuario'
+
 
 
 # Default primary key field type
